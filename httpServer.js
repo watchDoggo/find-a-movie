@@ -17,9 +17,9 @@ var server = http.createServer((req, res) => {
 
 	var page = url.parse(req.url).pathname;
 
-	if (page == "/000"){
+	if (page == "/"){
 
-		fs.readFile('firstHTML.html', (err, html) => {
+		fs.readFile('first.html', (err, html) => {
 
 		res.write(html);
 		res.end();
