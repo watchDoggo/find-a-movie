@@ -6,6 +6,16 @@
 
 <body>
     <h1 id="h1Id">This is the second page!</h1>
+    <h2 id="time">Here goes the time string</h2>
+    <script>
+        
+        function writeTime() {
+
+            document.getElementById('time').innerHTML = Date();
+        }
+        setInterval(writeTime, 10);
+
+    </script>
 </body>
 
 </html>
