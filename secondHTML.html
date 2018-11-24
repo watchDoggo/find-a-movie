@@ -7,13 +7,29 @@
 <body>
     <h1 id="h1Id">This is the second page!</h1>
     <h2 id="time">Here goes the time string</h2>
+    <button id = "btn" onclick="
+    if (isTimeOn){
+        clearInterval(keepTime);
+        document.getElementById('btn').innerHTML = 'start';
+        isTimeOn = false;
+    }
+    else{
+        document.getElementById('btn').innerHTML = 'stop';
+        keepTime = setInterval(writeTime, 10);
+        isTimeOn = true;
+    }
+    ">stop</button><br></br>
+    <a href = 'http://localhost:3100'>go to first page</a>
+
     <script>
         
         function writeTime() {
 
             document.getElementById('time').innerHTML = Date();
         }
-        setInterval(writeTime, 10);
+
+        var isTimeOn = true;
+        var keepTime = setInterval(writeTime, 10);
 
     </script>
 </body>
